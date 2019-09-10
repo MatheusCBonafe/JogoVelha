@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+      <meta charset="UTF-8">
+      <title>Jogo da Velha</title>
+  </head>
+
+  <script>
+    var Vitória = new Array();
+    var Selecoes1 = new Array();
+    var Selecoes2 = new Array();
+    var jogadorAtual = 0;
+    var Pontos1 = 0;
+    var Pontos2 = 0;
+    var tamTab = 3;
+
+    function Tabuleiro(){
+      var parent = document.getElementById("jogo");
+      var aux = 1;
+
+      while (Parent.hasChildNodes()) {
+          Parent.removeChild(Parent.firstChild);
+      }
+      for (var i = 0; i < 3; i++) {
+          var lin = document.createElement("tr");
+
+          for(var x = 0; x < tamTab; x++) {
+              var col = document.createElement("td");
+              col.id = aux;
+              col.innerHtml = counter;
+
+              var gerente = function(e) {
+                if (jogadorAtual == 0) {
+                  this.innerHtml = "X";
+                  Selecoes1.push(parseInt(this.id));
+                  Selecoes1.sort(function(a, b) {
+                    return a - b;
+                  });
+                }
+                else {
+                  this.innerHTML = "0";
+                  Selecoes2.push(parseInt(this.id));
+                  Selecoes2.sort(function(a, b) {
+                    return a - b;
+                  });
+                }
+                if (Vitória()) {
+                  if(jogadorAtual == 0)
+                    Pontos1++;
+                  else
+                    Pontos2++;
+                  document.getElementById("jogador1").innerHTML = Pontos1;
+                  document.getElementById("jogador2").innerHTML = Pontos2;
+                }
+              }
+          }
+          parent.appendChild(row);
+      }
+    }
+
+    function Vitória() {
+    vitória.push([1, 2, 3]);
+    vitória.push([4, 5, 6]);
+    vitória.push([7, 8, 9]);
+    vitória.push([1, 4, 7]);
+    vitória.push([2, 5, 8]);
+    vitória.push([3, 6, 9]);
+    vitória.push([1, 5, 9]);
+    vitória.push([3, 5, 7]);
+}
+  </script>
+
+  <div class="game">
+      <div class="game-title" contenteditable="true">Jogo da Velha</div>
+      <div class="player" contenteditable="true">
+          Jogador1
+          <div style="font-size:30pt;" id="jogador1" class="selected" contenteditable="true">
+          0
+          </div>
+      </div>
+
+      <table id="jogo" class="jogodavelha" style="float:left;width:45%;" contenteditable="true">
+      </table>
+
+      <div class="player" contenteditable="true">
+          Jogador2
+          <div id="jogador2" style="font-size:30pt;" contenteditable="true">0</div>
+      </div>
+
+      <div class="clear" contenteditable="true"></div>
+  </div>
