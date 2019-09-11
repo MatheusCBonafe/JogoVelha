@@ -1,4 +1,6 @@
-<html lang="pt=br">
+<!DOCTYPE html>
+
+<html lang="pt-br">
   <head>
     <title>Jogo da Velha</title>
     <meta charset="UTF-8">
@@ -7,39 +9,38 @@
 
   <body>
 
-  <script src="jogovelha.js"></script>
+    <script src="jogovelha.js"></script>
 
-  <header>
-    <h1 id = "title">Jogo da Velha</h1>
-    <h2 id = "jogador">Jogador 1</h2>
-  </header>
+    <header>
+      <h1 id = "title">Jogo da Velha</h1>
+      <h2 id = "jogador">Jogador 1</h2>
+    </header>
 
-  <table>
-    <tr>
-      <td><input type="button" id="1" onclick="buttonPress(1)" value=""/></td>
-      <td><input type="button" id="2" onclick="buttonPress(2)" value=""/></td>
-      <td><input type="button" id="3" onclick="buttonPress(3)" value=""/></td>
-    </tr>
-    <tr>
-      <td><input type="button" id="4" onclick="buttonPress(4)" value=""/></td>
-      <td><input type="button" id="5" onclick="buttonPress(5)" value=""/></td>
-      <td><input type="button" id="6" onclick="buttonPress(6)" value=""/></td>
-    </tr>
-    <tr>
-      <td><input type="button" id="7" onclick="buttonPress(7)" value=""/></td>
-      <td><input type="button" id="8" onclick="buttonPress(8)" value=""/></td>
-      <td><input type="button" id="9" onclick="buttonPress(9)" value=""/></td>
-    </tr>
-  </table>
+    <table>
+      <tr>
+        <td><input type="button" id = "1" onclick="buttonPress(1)" value = "&#160;"/></td>
+        <td><input type="button" id = "2" onclick="buttonPress(2)" value = "&#160;"/></td>
+        <td><input type="button" id = "3" onclick="buttonPress(3)" value = "&#160;"/></td>
+      </tr>
+      <tr>
+        <td><input type="button" id = "4" onclick="buttonPress(4)" value = "&#160;"/></td>
+        <td><input type="button" id = "5" onclick="buttonPress(5)" value = "&#160;"/></td>
+        <td><input type="button" id = "6" onclick="buttonPress(6)" value = "&#160;"/></td>
+      </tr>
+      <tr>
+        <td><input type="button" id = "7" onclick="buttonPress(7)" value = "&#160;"/></td>
+        <td><input type="button" id = "8" onclick="buttonPress(8)" value = "&#160;"/></td>
+        <td><input type="button" id = "9" onclick="buttonPress(9)" value = "&#160;"/></td>
+      </tr>
+      <script>resetBoard();</script>
+    </table>
 
-  <button onclick="resetBoard()">Reset</button>
+    <div id="popup">
+      <p id="text"></p>
+      <button id="resetButton" onclick="resetBoard()">Ok</button>
+    </div>
 
-  <section align="center" id="popup">
-    <p id="text"></p>
-    <button id="resetButton" onclick="resetBoard()">Ok</button>
-  </section>
+    <div id="overlay"></div>
 
-  <section id="overlay"></section>
-
-  </body>
+    </body>
 </html>
