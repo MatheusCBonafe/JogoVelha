@@ -2,7 +2,7 @@
 var buttonAux = "O";
 
 
-//setzt Buttons zurück
+
 function resetBoard() {
   var pos1 = document.getElementById("1");
   var pos2 = document.getElementById("2");
@@ -23,7 +23,7 @@ function resetBoard() {
   pos7.value = "";
   pos8.value = "";
   pos9.value = "";
-  
+
   pos1.disabled = false;
   pos2.disabled = false;
   pos3.disabled = false;
@@ -179,7 +179,6 @@ function disablePosition(x, buttonAux) {
   winCondition();
 }
 
-//welches buttonAux?
 function buttonPress(button) {
   if (buttonAux == "X") {
     buttonAux = "O";
