@@ -76,7 +76,7 @@ function drawMessage() {
   disableBoard();
 
   popuptext = document.getElementById("text");
-  popuptext.innerHTML = empate;
+  popuptext.innerHTML = "Empate.";
 
   var pop = document.getElementById("popup");
   var overlay = document.getElementById("overlay");
@@ -98,35 +98,34 @@ function winCondition() {
   var pos9 = document.getElementById("9").value;
 
   if (((pos1 == "X") || (pos1 == "O")) && ((pos1 == pos2) && (pos2 == pos3)))
-      winnerMessage(pos1);
+    winnerMessage(pos1);
 
   else if (((pos1 == "X") || (pos1 == "O")) && ((pos1 == pos4) && (pos4 == pos7)))
-      winnerMessage(pos1);
-
-  else if (((pos9 == "X") || (pos9 == "O")) && ((pos9 == pos8) && (pos8 == pos7)))
-      winnerMessage(pos9);
-
-  else if (((pos9 == "X") || (pos9 == "O")) && ((pos9 == pos6) && (pos6 == pos3)))
-    winnerMessage(pos9);
-
-  else if (((pos4 == "X") || (pos4 == "O")) && ((pos4 == pos5) && (pos5 == pos6)))
-    winnerMessage(pos4);
-
-  else if (((pos2 == "X") || (pos2 == "O")) && ((pos2 == pos5) && (pos5 == pos8)))
-    winnerMessage(pos2);
+    winnerMessage(pos1);
 
   else if (((pos1 == "X") || (pos1 == "O")) && ((pos1 == pos5) && (pos5 == pos9)))
     winnerMessage(pos1);
 
+  else if ((pos2 == "X" || pos2 == "O") && (pos2 == pos5 && pos5 == pos8))
+    winnerMessage(pos2);
+
+  else if (((pos4 == "X") || (pos4 == "O")) && ((pos4 == pos5) && (pos5 == pos6)))
+    winnerMessage(pos4);
+
   else if (((pos7 == "X") || (pos7 == "O")) && ((pos7 == pos5) && (pos5 == pos3)))
     winnerMessage(pos7);
 
-  else if  ((pos1 == "X" || pos1 == "O") && ((pos1 == pos2) && (pos1 == pos3) && (pos1 == pos4) && (pos1 == pos5) && (pos1 == pos6) && (pos1 == pos7)
-  && (pos1 == pos8) && (pos1 == pos9)))
-    drawMessage();
+  else if (((pos9 == "X") || (pos9 == "O")) && ((pos9 == pos8) && (pos8 == pos7)))
+    winnerMessage(pos9);
+
+  else if (((pos9 == "X") || (pos9 == "O")) && ((pos9 == pos6) && (pos6 == pos3)))
+    winnerMessage(pos9);
+
+  //else if  (pos1.value != "" && pos2.value != "" && pos3.value != "" && pos4.value != "" && pos5.value != "" &&
+   //pos6.value != "" && pos7.value != "" && pos8.value != "" && pos9.value != "")
+    //drawMessage();
 }
 
-//X oder Y eindisablePosition
 function disablePosition(x, buttonAux) {
 
   switch (x) {
