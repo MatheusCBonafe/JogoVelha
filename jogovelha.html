@@ -2,6 +2,7 @@
   <head>
     <title>Jogo da Velha</title>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="jogovelha.css"/>
   </head>
 
   <body>
@@ -9,7 +10,8 @@
   <script src="jogovelha.js"></script>
 
   <header>
-  <h1>Jogo da Velha</h1>
+    <h1 id = "title">Jogo da Velha</h1>
+    <h2 id = "jogador">Jogador 1</h2>
   </header>
 
   <table>
@@ -33,8 +35,8 @@
   <button onclick="resetBoard()">Reset</button>
 
   <section align="center" id="popup">
-  <p id="text">text</p>
-  <button id="popupbutton" onclick="resetBoard()">Ok</button>
+    <p id="text"></p>
+    <button id="resetButton" onclick="resetBoard()">Ok</button>
   </section>
 
   <section id="overlay"></section>
