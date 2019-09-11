@@ -1,91 +1,43 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt=br">
   <head>
-      <meta charset="UTF-8">
-      <title>Jogo da Velha</title>
+    <title>Jogo da Velha</title>
+    <meta charset="UTF-8">
   </head>
 
-  <script>
-    var Vitória = new Array();
-    var Selecoes1 = new Array();
-    var Selecoes2 = new Array();
-    var jogadorAtual = 0;
-    var Pontos1 = 0;
-    var Pontos2 = 0;
-    var tamTab = 3;
+  <body>
 
-    function Tabuleiro(){
-      var parent = document.getElementById("jogo");
-      var aux = 1;
+  <script src="jogovelha.js"></script>
 
-      while (Parent.hasChildNodes()) {
-          Parent.removeChild(Parent.firstChild);
-      }
-      for (var i = 0; i < 3; i++) {
-          var lin = document.createElement("tr");
+  <header>
+  <h1>Jogo da Velha</h1>
+  </header>
 
-          for(var x = 0; x < tamTab; x++) {
-              var col = document.createElement("td");
-              col.id = aux;
-              col.innerHtml = counter;
+  <table>
+    <tr>
+      <td><input type="button" id="1" onclick="buttonPress(1)" value=""/></td>
+      <td><input type="button" id="2" onclick="buttonPress(2)" value=""/></td>
+      <td><input type="button" id="3" onclick="buttonPress(3)" value=""/></td>
+    </tr>
+    <tr>
+      <td><input type="button" id="4" onclick="buttonPress(4)" value=""/></td>
+      <td><input type="button" id="5" onclick="buttonPress(5)" value=""/></td>
+      <td><input type="button" id="6" onclick="buttonPress(6)" value=""/></td>
+    </tr>
+    <tr>
+      <td><input type="button" id="7" onclick="buttonPress(7)" value=""/></td>
+      <td><input type="button" id="8" onclick="buttonPress(8)" value=""/></td>
+      <td><input type="button" id="9" onclick="buttonPress(9)" value=""/></td>
+    </tr>
+  </table>
 
-              var gerente = function(e) {
-                if (jogadorAtual == 0) {
-                  this.innerHtml = "X";
-                  Selecoes1.push(parseInt(this.id));
-                  Selecoes1.sort(function(a, b) {
-                    return a - b;
-                  });
-                }
-                else {
-                  this.innerHTML = "0";
-                  Selecoes2.push(parseInt(this.id));
-                  Selecoes2.sort(function(a, b) {
-                    return a - b;
-                  });
-                }
-                if (Vitória()) {
-                  if(jogadorAtual == 0)
-                    Pontos1++;
-                  else
-                    Pontos2++;
-                  document.getElementById("jogador1").innerHTML = Pontos1;
-                  document.getElementById("jogador2").innerHTML = Pontos2;
-                }
-              }
-          }
-          parent.appendChild(row);
-      }
-    }
+  <button onclick="resetBoard()">Reset</button>
 
-    function Vitória() {
-    vitória.push([1, 2, 3]);
-    vitória.push([4, 5, 6]);
-    vitória.push([7, 8, 9]);
-    vitória.push([1, 4, 7]);
-    vitória.push([2, 5, 8]);
-    vitória.push([3, 6, 9]);
-    vitória.push([1, 5, 9]);
-    vitória.push([3, 5, 7]);
-}
-  </script>
+  <section align="center" id="popup">
+  <p id="text">text</p>
+  <button id="popupbutton" onclick="resetBoard()">Ok</button>
+  </section>
 
-  <div class="game">
-      <div class="game-title" contenteditable="true">Jogo da Velha</div>
-      <div class="player" contenteditable="true">
-          Jogador1
-          <div style="font-size:30pt;" id="jogador1" class="selected" contenteditable="true">
-          0
-          </div>
-      </div>
+  <section id="overlay"></section>
 
-      <table id="jogo" class="jogodavelha" style="float:left;width:45%;" contenteditable="true">
-      </table>
-
-      <div class="player" contenteditable="true">
-          Jogador2
-          <div id="jogador2" style="font-size:30pt;" contenteditable="true">0</div>
-      </div>
-
-      <div class="clear" contenteditable="true"></div>
-  </div>
+  </body>
+</html>
